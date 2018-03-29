@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+  <h2>Online Meal Planner</h2>
+</div>
+<div class="container">
+    {% for recipe in recipes %}
+    <div class="col-lg-12">
+        <span style="text-decoration:underline;"><h2>{{recipe[1]}} Recipe</h2></span>
+    </div>
+    <br />
+    <div class="col-lg-4">
+        <h2>
+            <img src="{{recipe[3]}}" style="max-height:200px; max-width:200px;">
+        </h2>
+    </div>
+    <div class="col-lg-8">
+        <h3>
+            Serving: {{recipe[4]}}
+        </h3>
+        <h3>
+            Preparation Time: {{recipe[5]}} minutes
+        </h3>
+        <h3>
+            Calories: {{recipe[7]}}
+        </h3>
+        <h3>
+            Created on: {{recipe[6]}}
+        </h3>
+    </div>
+    {% endfor %}
+    <h4>Instructions</h4>
+    {% for  instr in instrs%}
+        <div>{{instr[1]}}. {{instr[0]}}</div>
+    
+    {% endfor %}
+</div>
+{% endblock %}

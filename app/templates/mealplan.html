@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+  <h2>Meal Plan</h2>
+</div>
+<div class="container" ng-controller="GenMealPlanCtrl">
+    <button class="btn btn-default"><a href="{{url_for('newMealPlan')}}" ng-click="dostuff()">
+      Generate MealPlan</a></button>
+    <div>
+      {% raw %}
+      <style>
+        .col div{
+          height : 80px;
+        }
+      </style>
+      <div class='col col-md-4'>
+        <label>Day | Breakfast</label>
+        <div ng-repeat="breakfast in breakfasts">
+          {{ $index + 1 }} | {{ breakfast[0]}}
+        </div>
+      </div>
+      
+      <div class='col col-md-3'>
+        <label>Lunch</label>
+        <div ng-repeat="lunch in lunches">
+          {{lunch[0]}}
+        </div>
+      </div>
+      
+      <div class='col col-md-3'>
+        <label>Dinner</label>
+        <div ng-repeat="dinner in dinners">
+          {{dinner[0]}}
+        </div>
+      </div>
+      
+      <div class='col col-md-2'>
+        <label>Snack</label>
+        <div ng-repeat="snack in snacks">
+          {{snack[0]}}
+        </div>
+      </div>
+      {% endraw %}
+    </div>
+</div>
+{% endblock %}

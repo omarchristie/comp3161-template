@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+  <h2>Users</h2>
+</div>
+<div class="container">
+<table>
+    <th> Name
+</th>
+<th>
+    Email
+</th>
+<th>
+    Address
+</th>
+<th>
+    Phone Number
+</th>
+{% for user in users %}
+
+<TR>
+   <TD>{{user.user_firstname}} {{user.user_lastname}}</TD>
+   <TD>{{user.user_email}}</TD>
+   <TD>{{user.user_address}}</TD>
+   <TD>{{user.user_phonenumber}}</TD>
+</TR>
+{% endfor %}
+</table>
+{% endblock %}

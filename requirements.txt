@@ -1,0 +1,25 @@
+# ----------------------
+# Flask
+# ----------------------
+flask
+Flask-WTF
+wtforms
+Flask-SQLAlchemy
+validators
+
+# ----------------------
+# Testing
+# ----------------------
+mock
+
+
+# ----------------------
+# Production Server
+# ----------------------
+gunicorn
+
+
+# ----------------------
+# OTHER
+# ----------------------
+fake-factory

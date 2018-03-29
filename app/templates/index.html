@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block main %}
+<style>
+  .container{
+    height:300px;
+    text-align:center;
+}
+ 
+.cont{
+  text-align:center;
+  display:inline block;
+  margin-bottom: 40px;
+  
+}
+
+
+</style>
+
+
+
+<div class="container">
+  <h1>Online Meal Planner</h1>
+  <h2>Home Page</h2>
+</div>  
+<div class= "cont">
+    <button class="btn btn-default"><a href="{{url_for('register')}}">Sign Up</a></button>
+    <button class="btn btn-default"><a href="{{url_for('login')}}">Login</a></button>
+</div>
+
+{% endblock %}

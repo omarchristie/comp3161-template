@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main %}
+<style>
+  .container{
+    height:300px;
+    text-align:center;
+}
+ 
+.cont{
+  text-align:center;
+  display:inline block;
+  margin-bottom: 40px;
+  
+}
+</style>
+
+<div class="container">
+  <h2>Online Meal Planner</h2>
+</div>
+<div class="cont">
+    <button class="btn btn-default"><a href="{{url_for('newRecipe')}}">Add Recipe</a></button>
+    <button class="btn btn-default"><a href="{{url_for('recipes')}}">Search for Recipe</a></button>
+    <button class="btn btn-default"><a href="{{url_for('newMealPlan')}}">Generate MealPlan</a></button>
+</div>
+{% endblock %}

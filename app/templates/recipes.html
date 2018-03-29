@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+  <h2>Online Meal Planner</h2>
+</div>
+<div class="container">
+    <span class="pull-left"><h2>Recipes</h2></span>
+    <span class="pull-right"><button class="btn btn-success btn-md"><a href="{{url_for('newRecipe')}}">Add Recipe</a></button></span>
+</div>
+<div class="container">
+    <form action="{{ url_for('recipes') }}" method="post">
+    {{form.name.label}}
+    {{form.name}}
+    <br />
+    {{ form.submit(class="btn btn-default")}}
+    <br />
+</form>
+</div>
+<div class="container">
+    <form class="pull-right" action="{{url_for('filteredrecipes')}}" method="post">
+    <input type="text" name="calories" placeholder="Filter by Calories"><button class="btn btn-default">Filter</button>
+    </form>
+    </div>
+<div class="container">
+<table>
+    <th> Name
+</th>
+<th>
+    Type
+</th>
+<th>
+    Serving
+</th>
+<th>
+    Preparation Time
+</th>
+<th>
+    Calorie Count
+</th>
+{% for recipe in recipes %}
+<TR>
+   <TD>{{recipe[1]}}</TD>
+   <TD>{{recipe[2]}}</TD>
+   <TD>{{recipe[4]}}</TD>
+   <TD>{{recipe[5]}}</TD>
+   <td>{{recipe[7]}}</td>
+   <td><button class="btn btn-success btn-xs"><a href="{{url_for("recipedetails",recipeid=recipe[0])}}">Details</a></button></td>
+</TR>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
